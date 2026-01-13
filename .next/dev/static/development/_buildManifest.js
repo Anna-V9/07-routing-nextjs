@@ -1,7 +1,77 @@
 self.__BUILD_MANIFEST = {
+  "/_error": [
+    "static/chunks/pages/_error.js"
+  ],
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      },
+      {
+        "has": [
+          {
+            "type": "header",
+            "key": "next-url",
+            "value": "/notes(?:/.*)?"
+          }
+        ],
+        "source": "/notes/:nxtIid",
+        "destination": "/notes/(.):nxtIid"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [

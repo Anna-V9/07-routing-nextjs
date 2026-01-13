@@ -1,44 +1,43 @@
 'use client';
-import React, { useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
-import styles from './Modal.module.css';
 
-interface ModalProps {
-  onClose: () => void;
-  children: React.ReactNode;
+import { useEffect, type MouseEvent } from "react";
+import { createPortal } from "react-dom";
+import css from "./Modal.module.css"
+
+interface ModalProps{
+    children: React.ReactNode;
+    onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
-  const [modalRoot, setModalRoot] = useState<HTMLElement | null>(null);
-
-  useEffect(() => {
-    const root = document.getElementById('modal-root') || document.body;
-    setModalRoot(root);
-
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    window.addEventListener('keydown', onKey);
-
-    const originalOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
+function Modal({ children, onClose }: ModalProps) {
+    useEffect(() => {
+        const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
     return () => {
-      window.removeEventListener('keydown', onKey);
-      document.body.style.overflow = originalOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
     };
   }, [onClose]);
 
-  if (!modalRoot) return null;
+  const handleBackdrop = (event: MouseEvent<HTMLDivElement>) => {
+    if (event.target === event.currentTarget) onClose();
+  }
+  
 
   return createPortal(
-    <div className={styles.backdrop} role="dialog" aria-modal="true" onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        {children}
+    <div
+      className={css.backdrop}
+      role="dialog"
+      aria-modal="true"
+      onClick={handleBackdrop}>
+      <div className={css.modal}>
+          {children}
       </div>
-    </div>,
-    modalRoot
+    </div>, document.body
   );
-};
+}
 
 export default Modal;

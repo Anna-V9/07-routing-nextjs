@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/trani/Project/06-notehub-nextjs/app/loading.tsx"],"sourcesContent":["export default function Loading() {\r\n  return <p>Loading, please wait...</p>;\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;kBAAE;;;;;;AACZ"}}]
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/trani/Project/07-routing-nextjs/app/loading.tsx"],"sourcesContent":["export default function Loading() {\r\n  return <p>Loading, please wait...</p>;\r\n}"],"names":[],"mappings":";;;;;;AAAe,SAAS;IACtB,qBAAO,8OAAC;kBAAE;;;;;;AACZ"}}]
 }

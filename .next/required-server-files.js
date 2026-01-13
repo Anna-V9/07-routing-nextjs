@@ -140,7 +140,7 @@ self.__SERVER_FILES_MANIFEST={
       "isExperimentalCompile": false
     }
   },
-  "appDir": "C:\\Users\\trani\\Project\\06-notehub-nextjs",
+  "appDir": "C:\\Users\\trani\\Project\\07-routing-nextjs",
   "relativeAppDir": "",
   "files": [
     ".next\\routes-manifest.json",
