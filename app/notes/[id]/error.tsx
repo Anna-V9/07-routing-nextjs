@@ -1,33 +1,11 @@
 'use client';
 
-interface Props {
-  error: Error;
-  reset: () => void;
+type Props = {
+    error: Error;
+};
+
+const Error = ({error}:Props) => {
+  return <p>Could not fetch note details. {error.message}</p>;
 }
 
-export default function NoteDetailsError({ error, reset }: Props) {
-  return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      <h2>Oops!</h2>
-
-      <p>
-        {error.message}
-      </p>
-
-      <button
-        onClick={reset}
-        style={{
-          marginTop: '1rem',
-          padding: '0.5rem 1rem',
-          cursor: 'pointer',
-          borderRadius: '4px',
-          backgroundColor: '#0070f3',
-          color: '#fff',
-          border: 'none',
-        }}
-      >
-        Try again
-      </button>
-    </div>
-  );
-}
+export default Error;
