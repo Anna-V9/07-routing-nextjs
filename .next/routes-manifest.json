@@ -43,12 +43,12 @@
       "namedRegex": "^/\\(\\.\\)notes/(?<nxtPid>[^/]+?)(?:/)?$"
     },
     {
-      "page": "/notes/filter/[...tag]",
+      "page": "/notes/filter/[...slug]",
       "regex": "^/notes/filter/(.+?)(?:/)?$",
       "routeKeys": {
-        "nxtPtag": "nxtPtag"
+        "nxtPslug": "nxtPslug"
       },
-      "namedRegex": "^/notes/filter/(?<nxtPtag>.+?)(?:/)?$"
+      "namedRegex": "^/notes/filter/(?<nxtPslug>.+?)(?:/)?$"
     },
     {
       "page": "/notes/[id]",
